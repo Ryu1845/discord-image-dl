@@ -15,4 +15,6 @@ async def on_connect():
         for attachment in message.attachments:
             await attachment.save(attachment.filename)
             print(attachment.filename)
+    loop=asyncio.get_event_loop()
+    loop.stop()
 client.run(token, bot=False)
