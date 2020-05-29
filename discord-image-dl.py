@@ -7,7 +7,9 @@ print('Enter channelID')
 channelID=int(input())
 @client.event
 async def on_connect():
+    print('-------------------')
     channel=client.get_channel(channelID)
+    print('Downloading '+channel.name+'\n')
     if not os.path.exists(channel.name):
         os.mkdir(channel.name)
     os.chdir(channel.name)
